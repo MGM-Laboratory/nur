@@ -11,22 +11,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "1gw4v81y0rh9i789kj8yvlrb08dsxkmswkkmi0a4mjg64ab67mc1";
-    aarch64-linux = "0gfm5vngqgdplypam8j4bd3xfpnm2r9rg03y5wj688p1ahwwfdhi";
-    x86_64-darwin = "04xs0lkw3lyy753ck6ypcwy63i1w30c762l9y01a50664sw7isr6";
-    aarch64-darwin = "0mp2pkmlzvyn40lhgmwgh27xwlrvz59asbr89lx9mc4vswar9ypy";
+    x86_64-linux = "1b50rc8c9yp5l0aw0cq5zp7p3pcschfmrq0bp5z0blsqv3cb2j4i";
+    aarch64-linux = "1ysd4kvfgb3xz8yjwxzlw1znpwd1l12i7hswz852n6p9ik9rx63p";
+    x86_64-darwin = "06xhx8b98spyxv6dlbf04nvys2lzzxfp5qqx15j6mysi46k8s52p";
+    aarch64-darwin = "0vfyfq1f2rv4wl8cs6gpxj1x2rgb7815jx0dvyyjyc1p5dgiccmi";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/MGM-Laboratory/mgm-cli/releases/download/v0.2.1/mgm-linux-amd64.tar.gz";
-    aarch64-linux = "https://github.com/MGM-Laboratory/mgm-cli/releases/download/v0.2.1/mgm-linux-arm64.tar.gz";
-    x86_64-darwin = "https://github.com/MGM-Laboratory/mgm-cli/releases/download/v0.2.1/mgm-darwin-amd64.tar.gz";
-    aarch64-darwin = "https://github.com/MGM-Laboratory/mgm-cli/releases/download/v0.2.1/mgm-darwin-arm64.tar.gz";
+    x86_64-linux = "https://github.com/MGM-Laboratory/mgm-cli/releases/download/v0.4.8/mgm-linux-amd64.tar.gz";
+    aarch64-linux = "https://github.com/MGM-Laboratory/mgm-cli/releases/download/v0.4.8/mgm-linux-arm64.tar.gz";
+    x86_64-darwin = "https://github.com/MGM-Laboratory/mgm-cli/releases/download/v0.4.8/mgm-darwin-amd64.tar.gz";
+    aarch64-darwin = "https://github.com/MGM-Laboratory/mgm-cli/releases/download/v0.4.8/mgm-darwin-arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "mgm";
-  version = "0.2.1";
+  version = "0.4.8";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
